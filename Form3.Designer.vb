@@ -29,8 +29,8 @@ Partial Class pantProducto
         Me.taIngredientes = New System.Windows.Forms.RichTextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.btAceptar = New System.Windows.Forms.Button()
-        Me.btCancelar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -82,34 +82,39 @@ Partial Class pantProducto
         Me.TextBox2.Size = New System.Drawing.Size(180, 20)
         Me.TextBox2.TabIndex = 1
         '
-        'btAceptar
+        'Button1
         '
-        Me.btAceptar.Location = New System.Drawing.Point(29, 200)
-        Me.btAceptar.Name = "btAceptar"
-        Me.btAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btAceptar.TabIndex = 3
-        Me.btAceptar.Text = "Aceptar"
-        Me.btAceptar.UseVisualStyleBackColor = True
+        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Button_Ok_icon
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(92, 193)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 37)
+        Me.Button1.TabIndex = 9
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'btCancelar
+        'Button2
         '
-        Me.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btCancelar.Location = New System.Drawing.Point(210, 200)
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btCancelar.TabIndex = 4
-        Me.btCancelar.Text = "Cancelar"
-        Me.btCancelar.UseVisualStyleBackColor = True
+        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Button_Delete_icon
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(186, 193)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(35, 37)
+        Me.Button2.TabIndex = 10
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'pantProducto
         '
-        Me.AcceptButton = Me.btAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btCancelar
         Me.ClientSize = New System.Drawing.Size(316, 267)
-        Me.Controls.Add(Me.btCancelar)
-        Me.Controls.Add(Me.btAceptar)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.taIngredientes)
@@ -133,6 +138,6 @@ Partial Class pantProducto
     Friend WithEvents taIngredientes As RichTextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents btAceptar As Button
-    Friend WithEvents btCancelar As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

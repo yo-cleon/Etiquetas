@@ -27,6 +27,7 @@ Partial Class pantAcertaDe
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,12 +68,25 @@ Partial Class pantAcertaDe
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox1.Enabled = False
         Me.RichTextBox1.Font = New System.Drawing.Font("Armata", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.Location = New System.Drawing.Point(62, 151)
+        Me.RichTextBox1.Location = New System.Drawing.Point(62, 141)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(218, 70)
+        Me.RichTextBox1.Size = New System.Drawing.Size(218, 61)
         Me.RichTextBox1.TabIndex = 4
         Me.RichTextBox1.Text = "Utilidad para llevar el control de las" & Global.Microsoft.VisualBasic.ChrW(10) & "elaboraciones realizadas en el local" & Global.Microsoft.VisualBasic.ChrW(10) & "de ho" &
     "stelería e imprimir la etiqueta " & Global.Microsoft.VisualBasic.ChrW(10) & "correspondiente."
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Button_Ok_icon
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(144, 218)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 37)
+        Me.Button1.TabIndex = 10
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'pantAcertaDe
         '
@@ -80,6 +94,7 @@ Partial Class pantAcertaDe
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(326, 267)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label1)
@@ -100,4 +115,5 @@ Partial Class pantAcertaDe
     Friend WithEvents Label1 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Button1 As Button
 End Class

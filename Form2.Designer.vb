@@ -122,38 +122,51 @@ Partial Class pantElaboracion
         '
         'btAceptar
         '
-        Me.btAceptar.Location = New System.Drawing.Point(31, 222)
+        Me.btAceptar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btAceptar.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Button_Ok_icon
+        Me.btAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btAceptar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAceptar.Location = New System.Drawing.Point(61, 215)
         Me.btAceptar.Name = "btAceptar"
-        Me.btAceptar.Size = New System.Drawing.Size(75, 23)
+        Me.btAceptar.Size = New System.Drawing.Size(35, 37)
         Me.btAceptar.TabIndex = 8
-        Me.btAceptar.Text = "Aceptar"
-        Me.btAceptar.UseVisualStyleBackColor = True
+        Me.btAceptar.UseVisualStyleBackColor = False
         '
         'btCancelar
         '
+        Me.btCancelar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btCancelar.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Button_Delete_icon
+        Me.btCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btCancelar.Location = New System.Drawing.Point(216, 222)
+        Me.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCancelar.Location = New System.Drawing.Point(219, 215)
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btCancelar.Size = New System.Drawing.Size(35, 37)
         Me.btCancelar.TabIndex = 9
-        Me.btCancelar.Text = "Cancelar"
-        Me.btCancelar.UseVisualStyleBackColor = True
+        Me.btCancelar.UseVisualStyleBackColor = False
         '
         'btImprimir
         '
+        Me.btImprimir.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btImprimir.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Printer_red_icon
+        Me.btImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btImprimir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btImprimir.Location = New System.Drawing.Point(125, 222)
+        Me.btImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btImprimir.Location = New System.Drawing.Point(138, 215)
         Me.btImprimir.Name = "btImprimir"
-        Me.btImprimir.Size = New System.Drawing.Size(75, 23)
+        Me.btImprimir.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btImprimir.Size = New System.Drawing.Size(35, 37)
         Me.btImprimir.TabIndex = 10
-        Me.btImprimir.Text = "Imprimir"
-        Me.btImprimir.UseVisualStyleBackColor = True
+        Me.btImprimir.UseVisualStyleBackColor = False
         '
         'pantElaboracion
         '
         Me.AcceptButton = Me.btAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.btCancelar
         Me.ClientSize = New System.Drawing.Size(326, 267)
         Me.Controls.Add(Me.btImprimir)

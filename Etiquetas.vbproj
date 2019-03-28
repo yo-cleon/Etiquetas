@@ -97,6 +97,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EtiquetasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EtiquetasDataSet.vb">
+      <DependentUpon>EtiquetasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +189,13 @@
     <None Include="img\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Button-Download-icon.png" />
+    <None Include="img\Button-Upload-icon.png" />
+    <None Include="img\Printer-icon.png" />
+    <None Include="img\printer-green-icon.png" />
+    <None Include="img\Printer-red-icon.png" />
+    <None Include="img\Button-Ok-icon.png" />
+    <None Include="img\Button-Delete-icon.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -23,4 +23,12 @@
     Private Sub ReportViewer1_Load(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub btBajar_Click(sender As Object, e As EventArgs) Handles btBajar.Click
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
+        MessageBox.Show("Esto funciona")
+    End Sub
 End Class
