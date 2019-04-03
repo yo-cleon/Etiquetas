@@ -1,4 +1,6 @@
-﻿Public Class pantPpal
+﻿Imports System.Data.SqlClient
+
+Public Class pantPpal
     Private Sub NuevaElaboraciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevaElaboraciónToolStripMenuItem1.Click
         pantElaboracion.ShowDialog()
     End Sub
@@ -40,4 +42,15 @@
             Me.Dispose()
         End If
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim cnn As New SqlConnection(“server=TRIBUNAL-PC\SQLEXPRESS ; database=Etiquetas ; integrated security = true")
+        Dim da As New SqlDataAdapter(“SELECT * from ListadoElaboraciones order by Elaboracion Desc”, cnn)
+        Dim ds As New DataSet
+        da.Fill(ds)
+
+        DataGridView1.DataSource = ds.Tables(0)
+
+    End Sub
+
 End Class

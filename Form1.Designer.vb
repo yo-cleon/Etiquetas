@@ -31,6 +31,12 @@ Partial Class pantPpal
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Elaboracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaElaborado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaConsumoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ListadoElaboracionesBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EtiquetasDataSet2 = New Etiquetas.EtiquetasDataSet2()
         Me.ListadoElaboracionesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EtiquetasDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EtiquetasDataSet = New Etiquetas.EtiquetasDataSet()
@@ -41,22 +47,17 @@ Partial Class pantPpal
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btBajar = New System.Windows.Forms.Button()
         Me.ListadoElaboracionesTableAdapter = New Etiquetas.EtiquetasDataSetTableAdapters.ListadoElaboracionesTableAdapter()
-        Me.EtiquetasDataSet2 = New Etiquetas.EtiquetasDataSet2()
         Me.ListadoElaboracionesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListadoElaboracionesTableAdapter1 = New Etiquetas.EtiquetasDataSet2TableAdapters.ListadoElaboracionesTableAdapter()
-        Me.ListadoElaboracionesBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Elaboracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaElaborado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaConsumoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ListadoElaboracionesBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EtiquetasDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListadoElaboracionesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EtiquetasDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EtiquetasDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EtiquetasDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListadoElaboracionesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ListadoElaboracionesBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -101,6 +102,7 @@ Partial Class pantPpal
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Elaboracion, Me.Producto, Me.FechaElaborado, Me.FechaConsumoDataGridViewTextBoxColumn})
@@ -109,6 +111,40 @@ Partial Class pantPpal
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(538, 411)
         Me.DataGridView1.TabIndex = 1
+        '
+        'Elaboracion
+        '
+        Me.Elaboracion.DataPropertyName = "Elaboracion"
+        Me.Elaboracion.HeaderText = "Elaboracion"
+        Me.Elaboracion.Name = "Elaboracion"
+        '
+        'Producto
+        '
+        Me.Producto.DataPropertyName = "Producto"
+        Me.Producto.HeaderText = "Producto"
+        Me.Producto.Name = "Producto"
+        '
+        'FechaElaborado
+        '
+        Me.FechaElaborado.DataPropertyName = "FechaElaborado"
+        Me.FechaElaborado.HeaderText = "Fecha de Elaboración"
+        Me.FechaElaborado.Name = "FechaElaborado"
+        '
+        'FechaConsumoDataGridViewTextBoxColumn
+        '
+        Me.FechaConsumoDataGridViewTextBoxColumn.DataPropertyName = "FechaConsumo"
+        Me.FechaConsumoDataGridViewTextBoxColumn.HeaderText = "Fecha Máx. de Consumo"
+        Me.FechaConsumoDataGridViewTextBoxColumn.Name = "FechaConsumoDataGridViewTextBoxColumn"
+        '
+        'ListadoElaboracionesBindingSource2
+        '
+        Me.ListadoElaboracionesBindingSource2.DataMember = "ListadoElaboraciones"
+        Me.ListadoElaboracionesBindingSource2.DataSource = Me.EtiquetasDataSet2
+        '
+        'EtiquetasDataSet2
+        '
+        Me.EtiquetasDataSet2.DataSetName = "EtiquetasDataSet2"
+        Me.EtiquetasDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ListadoElaboracionesBindingSource
         '
@@ -210,11 +246,6 @@ Partial Class pantPpal
         '
         Me.ListadoElaboracionesTableAdapter.ClearBeforeFill = True
         '
-        'EtiquetasDataSet2
-        '
-        Me.EtiquetasDataSet2.DataSetName = "EtiquetasDataSet2"
-        Me.EtiquetasDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ListadoElaboracionesBindingSource1
         '
         Me.ListadoElaboracionesBindingSource1.DataMember = "ListadoElaboraciones"
@@ -224,34 +255,14 @@ Partial Class pantPpal
         '
         Me.ListadoElaboracionesTableAdapter1.ClearBeforeFill = True
         '
-        'ListadoElaboracionesBindingSource2
+        'Button5
         '
-        Me.ListadoElaboracionesBindingSource2.DataMember = "ListadoElaboraciones"
-        Me.ListadoElaboracionesBindingSource2.DataSource = Me.EtiquetasDataSet2
-        '
-        'Elaboracion
-        '
-        Me.Elaboracion.DataPropertyName = "Elaboracion"
-        Me.Elaboracion.HeaderText = "Elaboracion"
-        Me.Elaboracion.Name = "Elaboracion"
-        '
-        'Producto
-        '
-        Me.Producto.DataPropertyName = "Producto"
-        Me.Producto.HeaderText = "Producto"
-        Me.Producto.Name = "Producto"
-        '
-        'FechaElaborado
-        '
-        Me.FechaElaborado.DataPropertyName = "FechaElaborado"
-        Me.FechaElaborado.HeaderText = "Fecha de Elaboración"
-        Me.FechaElaborado.Name = "FechaElaborado"
-        '
-        'FechaConsumoDataGridViewTextBoxColumn
-        '
-        Me.FechaConsumoDataGridViewTextBoxColumn.DataPropertyName = "FechaConsumo"
-        Me.FechaConsumoDataGridViewTextBoxColumn.HeaderText = "Fecha Máx. de Consumo"
-        Me.FechaConsumoDataGridViewTextBoxColumn.Name = "FechaConsumoDataGridViewTextBoxColumn"
+        Me.Button5.Location = New System.Drawing.Point(565, 27)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(57, 23)
+        Me.Button5.TabIndex = 9
+        Me.Button5.Text = "Button5"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'pantPpal
         '
@@ -259,6 +270,7 @@ Partial Class pantPpal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(634, 450)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -275,12 +287,12 @@ Partial Class pantPpal
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ListadoElaboracionesBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EtiquetasDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ListadoElaboracionesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EtiquetasDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EtiquetasDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EtiquetasDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ListadoElaboracionesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ListadoElaboracionesBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -311,4 +323,5 @@ Partial Class pantPpal
     Friend WithEvents Producto As DataGridViewTextBoxColumn
     Friend WithEvents FechaElaborado As DataGridViewTextBoxColumn
     Friend WithEvents FechaConsumoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Button5 As Button
 End Class

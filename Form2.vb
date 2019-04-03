@@ -3,21 +3,20 @@
 Public Class pantElaboracion
     Private Sub btAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
         Dim aux As Int32 = cbProducto.SelectedValue
-        Dim conexion As SqlConnection
-        conexion = New SqlConnection("server=TRIBUNAL-PC\SQLEXPRESS ; database=Etiquetas ; integrated security = true")
+        Dim conexion = New SqlConnection("server=TRIBUNAL-PC\SQLEXPRESS ; database=Etiquetas ; integrated security = true")
         Try
             conexion.Open()
             Dim comando As SqlCommand
 
             'VER EL CÓDIGO DE UNA NUEVA ELABORACIÓN
-            Dim cadena1 As String = "SELECT TOP 1 Codigo FROM Elaboraciones ORDER BY Codigo DESC"
-            comando = New SqlCommand(cadena1, conexion)
+            Dim query1 As String = "SELECT TOP 1 Codigo FROM Elaboraciones ORDER BY Codigo DESC"
+            comando = New SqlCommand(query1, conexion)
             Dim nuevoCodigo = comando.ExecuteScalar + 1
 
             'INSERTAR LA NUEVA ELABORACIÓN
-            Dim cadena2 As String = "insert into Elaboraciones(Codigo, Producto, FechaElaboracion, FechaConsumo)
+            Dim query2 As String = "insert into Elaboraciones(Codigo, Producto, FechaElaboracion, FechaConsumo)
                                     values (" & nuevoCodigo & " , " & aux & ",'" & Format(fechaElaboracion.Value, "yyyy/MM/dd") & "','" & Format(fechaConsumo.Value, "yyyy/MM/dd") & "' )"
-            comando = New SqlCommand(cadena2, conexion)
+            comando = New SqlCommand(query2, conexion)
             comando.ExecuteNonQuery()
             MessageBox.Show("Los datos se guardaron correctamente")
             conexion.Close()
