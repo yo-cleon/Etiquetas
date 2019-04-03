@@ -1,34 +1,43 @@
 ﻿Public Class pantPpal
     Private Sub NuevaElaboraciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevaElaboraciónToolStripMenuItem1.Click
-        pantElaboracion.Show()
-
-    End Sub
-
-    Private Sub ImprimirEtiquetaToolStripMenuItem1_Click(sender As Object, e As EventArgs)
-
+        pantElaboracion.ShowDialog()
     End Sub
 
     Private Sub NuevoProductoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoProductoToolStripMenuItem.Click
-        pantProducto.Show()
+        pantProducto.ShowDialog()
     End Sub
 
-    Private Sub ImprimirEtiquetaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirEtiquetaToolStripMenuItem.Click
-        pantAcertaDe.Show()
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
+        pantAcertaDe.ShowDialog()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        pantElaboracion.ShowDialog()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        pantProducto.ShowDialog()
     End Sub
 
     Private Sub pantPpal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        'TODO: esta línea de código carga datos en la tabla 'EtiquetasDataSet2.ListadoElaboraciones' Puede moverla o quitarla según sea necesario.
+        Me.ListadoElaboracionesTableAdapter1.Fill(Me.EtiquetasDataSet2.ListadoElaboraciones)
+        'TODO: esta línea de código carga datos en la tabla 'EtiquetasDataSet.ListadoElaboraciones' Puede moverla o quitarla según sea necesario.
+        ListadoElaboracionesTableAdapter.Fill(EtiquetasDataSet.ListadoElaboraciones)
     End Sub
 
-    Private Sub ReportViewer1_Load(sender As Object, e As EventArgs)
-
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        Me.Close()
     End Sub
 
-    Private Sub btBajar_Click(sender As Object, e As EventArgs) Handles btBajar.Click
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
-        MessageBox.Show("Esto funciona")
+    Private Sub pantPpal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim dr As DialogResult = MessageBox.Show("Va a cerrar la aplicación," + vbLf + " ¿Desea continuar?",
+                                                 "Salir de la Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (dr = DialogResult.No) Then
+            ' Cancelamos el cierre del formulario.
+            e.Cancel = True
+        Else
+            Me.Dispose()
+        End If
     End Sub
 End Class

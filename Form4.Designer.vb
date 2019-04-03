@@ -77,15 +77,14 @@ Partial Class pantAcertaDe
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Button_Ok_icon
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1633396
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(144, 218)
+        Me.Button1.Location = New System.Drawing.Point(131, 214)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(35, 37)
-        Me.Button1.TabIndex = 10
+        Me.Button1.Size = New System.Drawing.Size(43, 41)
+        Me.Button1.TabIndex = 11
         Me.Button1.UseVisualStyleBackColor = False
         '
         'pantAcertaDe

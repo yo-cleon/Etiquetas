@@ -100,6 +100,19 @@
     <Compile Include="EtiquetasDataSet.vb">
       <DependentUpon>EtiquetasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EtiquetasDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EtiquetasDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EtiquetasDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EtiquetasDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EtiquetasDataSet2.vb">
+      <DependentUpon>EtiquetasDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +186,28 @@
     <None Include="EtiquetasDataSet.xss">
       <DependentUpon>EtiquetasDataSet.xsd</DependentUpon>
     </None>
+    <None Include="EtiquetasDataSet1.xsc">
+      <DependentUpon>EtiquetasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EtiquetasDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EtiquetasDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EtiquetasDataSet1.xss">
+      <DependentUpon>EtiquetasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EtiquetasDataSet2.xsc">
+      <DependentUpon>EtiquetasDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="EtiquetasDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EtiquetasDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EtiquetasDataSet2.xss">
+      <DependentUpon>EtiquetasDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -196,6 +231,17 @@
     <None Include="img\Printer-red-icon.png" />
     <None Include="img\Button-Ok-icon.png" />
     <None Include="img\Button-Delete-icon.png" />
+    <None Include="img\nueva-eleaboracion.png" />
+    <None Include="img\nueva-eleaboracion2.png" />
+    <None Include="img\nueva-eleaboracion3.png" />
+    <None Include="img\nuevo-producto.png" />
+    <None Include="img\1524399.png" />
+    <None Include="img\1591319.png" />
+    <None Include="img\arrow-up.png" />
+    <None Include="img\1620738.png" />
+    <None Include="img\1587433.png" />
+    <None Include="img\cross.png" />
+    <None Include="img\1633396.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

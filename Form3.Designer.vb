@@ -22,6 +22,7 @@ Partial Class pantProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pantProducto))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,6 +32,7 @@ Partial Class pantProducto
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -84,28 +86,29 @@ Partial Class pantProducto
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Button_Ok_icon
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1633396
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(92, 193)
+        Me.Button1.Location = New System.Drawing.Point(29, 193)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(35, 37)
+        Me.Button1.Size = New System.Drawing.Size(43, 41)
         Me.Button1.TabIndex = 9
+        Me.ToolTip1.SetToolTip(Me.Button1, "Guardar y Cerrar")
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.BackgroundImage = Global.Etiquetas.My.Resources.Resources.Button_Delete_icon
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackgroundImage = Global.Etiquetas.My.Resources.Resources.cross
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(186, 193)
+        Me.Button2.Location = New System.Drawing.Point(242, 193)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(35, 37)
+        Me.Button2.Size = New System.Drawing.Size(43, 41)
         Me.Button2.TabIndex = 10
+        Me.ToolTip1.SetToolTip(Me.Button2, "Cancelar")
         Me.Button2.UseVisualStyleBackColor = False
         '
         'pantProducto
@@ -140,4 +143,5 @@ Partial Class pantProducto
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
