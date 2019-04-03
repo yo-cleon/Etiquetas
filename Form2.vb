@@ -20,6 +20,8 @@ Public Class pantElaboracion
             comando.ExecuteNonQuery()
             MessageBox.Show("Los datos se guardaron correctamente")
             conexion.Close()
+            pantPpal.CargarTabla()
+
         Catch ex As Exception
             MessageBox.Show("ERROR SQL: " + vbLf + ex.StackTrace)
         End Try
