@@ -28,11 +28,13 @@ Partial Class pantProducto
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.taIngredientes = New System.Windows.Forms.RichTextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.tbCodigo = New System.Windows.Forms.TextBox()
+        Me.tbNombre = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btAceptar = New System.Windows.Forms.Button()
+        Me.btCancelar = New System.Windows.Forms.Button()
+        Me.btBuscar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -70,56 +72,91 @@ Partial Class pantProducto
         Me.taIngredientes.TabIndex = 2
         Me.taIngredientes.Text = ""
         '
-        'TextBox1
+        'tbCodigo
         '
-        Me.TextBox1.Location = New System.Drawing.Point(29, 42)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(47, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.tbCodigo.BackColor = System.Drawing.SystemColors.Info
+        Me.tbCodigo.Location = New System.Drawing.Point(29, 42)
+        Me.tbCodigo.Name = "tbCodigo"
+        Me.tbCodigo.ReadOnly = True
+        Me.tbCodigo.Size = New System.Drawing.Size(47, 20)
+        Me.tbCodigo.TabIndex = 0
+        Me.tbCodigo.TabStop = False
         '
-        'TextBox2
+        'tbNombre
         '
-        Me.TextBox2.Location = New System.Drawing.Point(105, 42)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.tbNombre.Location = New System.Drawing.Point(105, 42)
+        Me.tbNombre.Name = "tbNombre"
+        Me.tbNombre.Size = New System.Drawing.Size(180, 20)
+        Me.tbNombre.TabIndex = 1
+        '
+        'btAceptar
+        '
+        Me.btAceptar.BackColor = System.Drawing.Color.Transparent
+        Me.btAceptar.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1633396
+        Me.btAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btAceptar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btAceptar.Location = New System.Drawing.Point(29, 193)
+        Me.btAceptar.Name = "btAceptar"
+        Me.btAceptar.Size = New System.Drawing.Size(43, 43)
+        Me.btAceptar.TabIndex = 9
+        Me.ToolTip1.SetToolTip(Me.btAceptar, "Guardar cambios")
+        Me.btAceptar.UseVisualStyleBackColor = False
+        '
+        'btCancelar
+        '
+        Me.btCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.btCancelar.BackgroundImage = Global.Etiquetas.My.Resources.Resources.cross
+        Me.btCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btCancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btCancelar.Location = New System.Drawing.Point(242, 193)
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(43, 43)
+        Me.btCancelar.TabIndex = 10
+        Me.ToolTip1.SetToolTip(Me.btCancelar, "Cancelar y cerrar pantalla")
+        Me.btCancelar.UseVisualStyleBackColor = False
+        '
+        'btBuscar
+        '
+        Me.btBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.btBuscar.BackgroundImage = Global.Etiquetas.My.Resources.Resources.icono_buscar
+        Me.btBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btBuscar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btBuscar.Location = New System.Drawing.Point(78, 42)
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(21, 20)
+        Me.btBuscar.TabIndex = 11
+        Me.ToolTip1.SetToolTip(Me.btBuscar, "Buscar producto")
+        Me.btBuscar.UseVisualStyleBackColor = False
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1633396
+        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources.add_producto
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Location = New System.Drawing.Point(29, 193)
+        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Button1.Location = New System.Drawing.Point(92, 193)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(43, 41)
-        Me.Button1.TabIndex = 9
-        Me.ToolTip1.SetToolTip(Me.Button1, "Guardar y Cerrar")
+        Me.Button1.Size = New System.Drawing.Size(43, 43)
+        Me.Button1.TabIndex = 12
+        Me.ToolTip1.SetToolTip(Me.Button1, "Cancelar cambios")
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = Global.Etiquetas.My.Resources.Resources.cross
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button2.Location = New System.Drawing.Point(242, 193)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(43, 41)
-        Me.Button2.TabIndex = 10
-        Me.ToolTip1.SetToolTip(Me.Button2, "Cancelar")
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'pantProducto
         '
+        Me.AcceptButton = Me.btAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btCancelar
         Me.ClientSize = New System.Drawing.Size(316, 267)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.btBuscar)
+        Me.Controls.Add(Me.btCancelar)
+        Me.Controls.Add(Me.btAceptar)
+        Me.Controls.Add(Me.tbNombre)
+        Me.Controls.Add(Me.tbCodigo)
         Me.Controls.Add(Me.taIngredientes)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -139,9 +176,11 @@ Partial Class pantProducto
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents taIngredientes As RichTextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents tbCodigo As TextBox
+    Friend WithEvents tbNombre As TextBox
+    Friend WithEvents btAceptar As Button
+    Friend WithEvents btCancelar As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents btBuscar As Button
+    Friend WithEvents Button1 As Button
 End Class

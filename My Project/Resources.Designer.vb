@@ -113,6 +113,26 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property add_elaboracion() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("add-elaboracion", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property add_producto() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("add-producto", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property arrow_up() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("arrow-up", resourceCulture)
@@ -166,6 +186,26 @@ Namespace My.Resources
         Friend ReadOnly Property cross() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cross", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property del_elaboracion() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("del-elaboracion", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property icono_buscar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("icono-buscar", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

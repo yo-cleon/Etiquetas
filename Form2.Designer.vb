@@ -30,7 +30,7 @@ Partial Class pantElaboracion
         Me.Label4 = New System.Windows.Forms.Label()
         Me.fechaElaboracion = New System.Windows.Forms.DateTimePicker()
         Me.fechaConsumo = New System.Windows.Forms.DateTimePicker()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.taIngredientes = New System.Windows.Forms.RichTextBox()
         Me.btAceptar = New System.Windows.Forms.Button()
         Me.btCancelar = New System.Windows.Forms.Button()
         Me.btImprimir = New System.Windows.Forms.Button()
@@ -38,6 +38,7 @@ Partial Class pantElaboracion
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EtiquetasDataSet1 = New Etiquetas.EtiquetasDataSet1()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.EtiquetasDataSet = New Etiquetas.EtiquetasDataSet()
         Me.EtiquetasDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductosTableAdapter = New Etiquetas.EtiquetasDataSet1TableAdapters.ProductosTableAdapter()
@@ -102,14 +103,15 @@ Partial Class pantElaboracion
         Me.fechaConsumo.TabIndex = 6
         Me.fechaConsumo.Value = New Date(2019, 4, 4, 0, 0, 0, 0)
         '
-        'RichTextBox1
+        'taIngredientes
         '
-        Me.RichTextBox1.Enabled = False
-        Me.RichTextBox1.Location = New System.Drawing.Point(31, 137)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(260, 64)
-        Me.RichTextBox1.TabIndex = 7
-        Me.RichTextBox1.Text = ""
+        Me.taIngredientes.BackColor = System.Drawing.SystemColors.Info
+        Me.taIngredientes.Location = New System.Drawing.Point(31, 137)
+        Me.taIngredientes.Name = "taIngredientes"
+        Me.taIngredientes.ReadOnly = True
+        Me.taIngredientes.Size = New System.Drawing.Size(260, 64)
+        Me.taIngredientes.TabIndex = 7
+        Me.taIngredientes.Text = ""
         '
         'btAceptar
         '
@@ -117,11 +119,11 @@ Partial Class pantElaboracion
         Me.btAceptar.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1633396
         Me.btAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btAceptar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btAceptar.Location = New System.Drawing.Point(31, 215)
+        Me.btAceptar.Location = New System.Drawing.Point(31, 211)
         Me.btAceptar.Name = "btAceptar"
-        Me.btAceptar.Size = New System.Drawing.Size(35, 37)
+        Me.btAceptar.Size = New System.Drawing.Size(43, 43)
         Me.btAceptar.TabIndex = 8
-        Me.ToolTip1.SetToolTip(Me.btAceptar, "Guardar y cerrar")
+        Me.ToolTip1.SetToolTip(Me.btAceptar, "Guardar los cambios")
         Me.btAceptar.UseVisualStyleBackColor = False
         '
         'btCancelar
@@ -131,11 +133,11 @@ Partial Class pantElaboracion
         Me.btCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCancelar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btCancelar.Location = New System.Drawing.Point(244, 215)
+        Me.btCancelar.Location = New System.Drawing.Point(244, 211)
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(43, 41)
+        Me.btCancelar.Size = New System.Drawing.Size(43, 43)
         Me.btCancelar.TabIndex = 9
-        Me.ToolTip1.SetToolTip(Me.btCancelar, "Cancelar")
+        Me.ToolTip1.SetToolTip(Me.btCancelar, "Cancelar y cerrar pantalla")
         Me.btCancelar.UseVisualStyleBackColor = False
         '
         'btImprimir
@@ -145,24 +147,21 @@ Partial Class pantElaboracion
         Me.btImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btImprimir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btImprimir.Location = New System.Drawing.Point(140, 215)
+        Me.btImprimir.Location = New System.Drawing.Point(103, 211)
         Me.btImprimir.Name = "btImprimir"
         Me.btImprimir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btImprimir.Size = New System.Drawing.Size(43, 41)
+        Me.btImprimir.Size = New System.Drawing.Size(43, 43)
         Me.btImprimir.TabIndex = 10
         Me.ToolTip1.SetToolTip(Me.btImprimir, "Imprimir etiqueta")
         Me.btImprimir.UseVisualStyleBackColor = False
         '
         'cbProducto
         '
-        Me.cbProducto.DataSource = Me.ProductosBindingSource
-        Me.cbProducto.DisplayMember = "Nombre"
         Me.cbProducto.FormattingEnabled = True
         Me.cbProducto.Location = New System.Drawing.Point(31, 33)
         Me.cbProducto.Name = "cbProducto"
         Me.cbProducto.Size = New System.Drawing.Size(260, 21)
         Me.cbProducto.TabIndex = 4
-        Me.cbProducto.ValueMember = "Codigo"
         '
         'ProductosBindingSource
         '
@@ -173,6 +172,21 @@ Partial Class pantElaboracion
         '
         Me.EtiquetasDataSet1.DataSetName = "EtiquetasDataSet1"
         Me.EtiquetasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Button4.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1591319
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.Location = New System.Drawing.Point(172, 212)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Padding = New System.Windows.Forms.Padding(10)
+        Me.Button4.Size = New System.Drawing.Size(43, 43)
+        Me.Button4.TabIndex = 11
+        Me.ToolTip1.SetToolTip(Me.Button4, "Añadir o editar productos")
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'EtiquetasDataSet
         '
@@ -196,10 +210,11 @@ Partial Class pantElaboracion
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.btCancelar
         Me.ClientSize = New System.Drawing.Size(326, 267)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.btImprimir)
         Me.Controls.Add(Me.btCancelar)
         Me.Controls.Add(Me.btAceptar)
-        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.taIngredientes)
         Me.Controls.Add(Me.fechaConsumo)
         Me.Controls.Add(Me.fechaElaboracion)
         Me.Controls.Add(Me.cbProducto)
@@ -228,7 +243,7 @@ Partial Class pantElaboracion
     Friend WithEvents Label4 As Label
     Friend WithEvents fechaElaboracion As DateTimePicker
     Friend WithEvents fechaConsumo As DateTimePicker
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents taIngredientes As RichTextBox
     Friend WithEvents btAceptar As Button
     Friend WithEvents btCancelar As Button
     Friend WithEvents btImprimir As Button
@@ -240,4 +255,5 @@ Partial Class pantElaboracion
     Friend WithEvents EtiquetasDataSet1 As EtiquetasDataSet1
     Friend WithEvents ProductosBindingSource As BindingSource
     Friend WithEvents ProductosTableAdapter As EtiquetasDataSet1TableAdapters.ProductosTableAdapter
+    Friend WithEvents Button4 As Button
 End Class

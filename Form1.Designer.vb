@@ -23,32 +23,37 @@ Partial Class pantPpal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pantPpal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.NuevaElaboraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevaElaboraciónToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Elaboracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaElaborado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaConsumoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ListadoElaboracionesBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.EtiquetasDataSet2 = New Etiquetas.EtiquetasDataSet2()
         Me.ListadoElaboracionesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EtiquetasDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EtiquetasDataSet = New Etiquetas.EtiquetasDataSet()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btDelElaboracion = New System.Windows.Forms.Button()
+        Me.btImprimir = New System.Windows.Forms.Button()
+        Me.btAddElaboracion = New System.Windows.Forms.Button()
+        Me.btSubir = New System.Windows.Forms.Button()
         Me.btBajar = New System.Windows.Forms.Button()
         Me.ListadoElaboracionesTableAdapter = New Etiquetas.EtiquetasDataSetTableAdapters.ListadoElaboracionesTableAdapter()
         Me.ListadoElaboracionesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListadoElaboracionesTableAdapter1 = New Etiquetas.EtiquetasDataSet2TableAdapters.ListadoElaboracionesTableAdapter()
-        Me.Elaboracion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaElaborado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaConsumoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListadoElaboracionesBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,13 +69,13 @@ Partial Class pantPpal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaElaboraciónToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(634, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(609, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'NuevaElaboraciónToolStripMenuItem
         '
-        Me.NuevaElaboraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaElaboraciónToolStripMenuItem1, Me.NuevoProductoToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.NuevaElaboraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaElaboraciónToolStripMenuItem1, Me.ProductosToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.NuevaElaboraciónToolStripMenuItem.Name = "NuevaElaboraciónToolStripMenuItem"
         Me.NuevaElaboraciónToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.NuevaElaboraciónToolStripMenuItem.Text = "Archivo"
@@ -81,11 +86,11 @@ Partial Class pantPpal
         Me.NuevaElaboraciónToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
         Me.NuevaElaboraciónToolStripMenuItem1.Text = "Nueva Elaboración"
         '
-        'NuevoProductoToolStripMenuItem
+        'ProductosToolStripMenuItem
         '
-        Me.NuevoProductoToolStripMenuItem.Name = "NuevoProductoToolStripMenuItem"
-        Me.NuevoProductoToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.NuevoProductoToolStripMenuItem.Text = "Nuevo Producto"
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'SalirToolStripMenuItem
         '
@@ -102,14 +107,61 @@ Partial Class pantPpal
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToOrderColumns = True
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.AutoGenerateColumns = False
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Elaboracion, Me.Producto, Me.FechaElaborado, Me.FechaConsumoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ListadoElaboracionesBindingSource2
         Me.DataGridView1.Location = New System.Drawing.Point(12, 27)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(538, 411)
-        Me.DataGridView1.TabIndex = 1
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(515, 411)
+        Me.DataGridView1.TabIndex = 6
+        '
+        'Elaboracion
+        '
+        Me.Elaboracion.DataPropertyName = "Elaboracion"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Elaboracion.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Elaboracion.HeaderText = "Elaboracion"
+        Me.Elaboracion.Name = "Elaboracion"
+        Me.Elaboracion.ReadOnly = True
+        Me.Elaboracion.Width = 80
+        '
+        'Producto
+        '
+        Me.Producto.DataPropertyName = "Producto"
+        Me.Producto.HeaderText = "Producto"
+        Me.Producto.Name = "Producto"
+        Me.Producto.ReadOnly = True
+        Me.Producto.Width = 190
+        '
+        'FechaElaborado
+        '
+        Me.FechaElaborado.DataPropertyName = "FechaElaborado"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.FechaElaborado.DefaultCellStyle = DataGridViewCellStyle4
+        Me.FechaElaborado.HeaderText = "Fecha de Elaboración"
+        Me.FechaElaborado.Name = "FechaElaborado"
+        Me.FechaElaborado.ReadOnly = True
+        '
+        'FechaConsumoDataGridViewTextBoxColumn
+        '
+        Me.FechaConsumoDataGridViewTextBoxColumn.DataPropertyName = "FechaConsumo"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.FechaConsumoDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
+        Me.FechaConsumoDataGridViewTextBoxColumn.HeaderText = "Fecha Máx. de Consumo"
+        Me.FechaConsumoDataGridViewTextBoxColumn.Name = "FechaConsumoDataGridViewTextBoxColumn"
+        Me.FechaConsumoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ListadoElaboracionesBindingSource2
         '
@@ -142,65 +194,65 @@ Partial Class pantPpal
         Me.ToolTip1.InitialDelay = 200
         Me.ToolTip1.ReshowDelay = 100
         '
-        'Button2
+        'btDelElaboracion
         '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1587433
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.Location = New System.Drawing.Point(574, 287)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Padding = New System.Windows.Forms.Padding(10)
-        Me.Button2.Size = New System.Drawing.Size(43, 41)
-        Me.Button2.TabIndex = 8
-        Me.ToolTip1.SetToolTip(Me.Button2, "Nueva producto")
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btDelElaboracion.BackColor = System.Drawing.Color.Transparent
+        Me.btDelElaboracion.BackgroundImage = Global.Etiquetas.My.Resources.Resources.del_elaboracion
+        Me.btDelElaboracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btDelElaboracion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btDelElaboracion.FlatAppearance.BorderSize = 0
+        Me.btDelElaboracion.Location = New System.Drawing.Point(546, 281)
+        Me.btDelElaboracion.Name = "btDelElaboracion"
+        Me.btDelElaboracion.Padding = New System.Windows.Forms.Padding(10)
+        Me.btDelElaboracion.Size = New System.Drawing.Size(43, 43)
+        Me.btDelElaboracion.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.btDelElaboracion, "Borrar elaboración")
+        Me.btDelElaboracion.UseVisualStyleBackColor = False
         '
-        'Button4
+        'btImprimir
         '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1591319
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.Location = New System.Drawing.Point(574, 217)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Padding = New System.Windows.Forms.Padding(10)
-        Me.Button4.Size = New System.Drawing.Size(43, 43)
-        Me.Button4.TabIndex = 7
-        Me.ToolTip1.SetToolTip(Me.Button4, "Nuevo producto")
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btImprimir.BackColor = System.Drawing.Color.Transparent
+        Me.btImprimir.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1587433
+        Me.btImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btImprimir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btImprimir.FlatAppearance.BorderSize = 0
+        Me.btImprimir.Location = New System.Drawing.Point(546, 217)
+        Me.btImprimir.Name = "btImprimir"
+        Me.btImprimir.Padding = New System.Windows.Forms.Padding(10)
+        Me.btImprimir.Size = New System.Drawing.Size(43, 41)
+        Me.btImprimir.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.btImprimir, "Nueva producto")
+        Me.btImprimir.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btAddElaboracion
         '
-        Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.BackgroundImage = Global.Etiquetas.My.Resources.Resources._1524399
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.Location = New System.Drawing.Point(574, 151)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Padding = New System.Windows.Forms.Padding(10)
-        Me.Button3.Size = New System.Drawing.Size(43, 43)
-        Me.Button3.TabIndex = 6
-        Me.ToolTip1.SetToolTip(Me.Button3, "Nueva elaboración")
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btAddElaboracion.BackColor = System.Drawing.Color.Transparent
+        Me.btAddElaboracion.BackgroundImage = Global.Etiquetas.My.Resources.Resources.add_elaboracion
+        Me.btAddElaboracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btAddElaboracion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btAddElaboracion.FlatAppearance.BorderSize = 0
+        Me.btAddElaboracion.Location = New System.Drawing.Point(546, 150)
+        Me.btAddElaboracion.Name = "btAddElaboracion"
+        Me.btAddElaboracion.Padding = New System.Windows.Forms.Padding(10)
+        Me.btAddElaboracion.Size = New System.Drawing.Size(43, 43)
+        Me.btAddElaboracion.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.btAddElaboracion, "Nueva elaboración")
+        Me.btAddElaboracion.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btSubir
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = Global.Etiquetas.My.Resources.Resources.arrow_up
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.Location = New System.Drawing.Point(574, 86)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(10)
-        Me.Button1.Size = New System.Drawing.Size(43, 41)
-        Me.Button1.TabIndex = 5
-        Me.ToolTip1.SetToolTip(Me.Button1, "Registro anterior")
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btSubir.BackColor = System.Drawing.Color.Transparent
+        Me.btSubir.BackgroundImage = Global.Etiquetas.My.Resources.Resources.arrow_up
+        Me.btSubir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btSubir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSubir.FlatAppearance.BorderSize = 0
+        Me.btSubir.Location = New System.Drawing.Point(546, 85)
+        Me.btSubir.Name = "btSubir"
+        Me.btSubir.Padding = New System.Windows.Forms.Padding(10)
+        Me.btSubir.Size = New System.Drawing.Size(43, 41)
+        Me.btSubir.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.btSubir, "Registro anterior")
+        Me.btSubir.UseVisualStyleBackColor = False
         '
         'btBajar
         '
@@ -209,11 +261,11 @@ Partial Class pantPpal
         Me.btBajar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBajar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btBajar.FlatAppearance.BorderSize = 0
-        Me.btBajar.Location = New System.Drawing.Point(574, 349)
+        Me.btBajar.Location = New System.Drawing.Point(546, 348)
         Me.btBajar.Name = "btBajar"
         Me.btBajar.Padding = New System.Windows.Forms.Padding(10)
         Me.btBajar.Size = New System.Drawing.Size(43, 41)
-        Me.btBajar.TabIndex = 2
+        Me.btBajar.TabIndex = 5
         Me.ToolTip1.SetToolTip(Me.btBajar, "Registro siguiente")
         Me.btBajar.UseVisualStyleBackColor = False
         '
@@ -230,46 +282,24 @@ Partial Class pantPpal
         '
         Me.ListadoElaboracionesTableAdapter1.ClearBeforeFill = True
         '
-        'Elaboracion
-        '
-        Me.Elaboracion.DataPropertyName = "Elaboracion"
-        Me.Elaboracion.HeaderText = "Elaboracion"
-        Me.Elaboracion.Name = "Elaboracion"
-        '
-        'Producto
-        '
-        Me.Producto.DataPropertyName = "Producto"
-        Me.Producto.HeaderText = "Producto"
-        Me.Producto.Name = "Producto"
-        '
-        'FechaElaborado
-        '
-        Me.FechaElaborado.DataPropertyName = "FechaElaborado"
-        Me.FechaElaborado.HeaderText = "Fecha de Elaboración"
-        Me.FechaElaborado.Name = "FechaElaborado"
-        '
-        'FechaConsumoDataGridViewTextBoxColumn
-        '
-        Me.FechaConsumoDataGridViewTextBoxColumn.DataPropertyName = "FechaConsumo"
-        Me.FechaConsumoDataGridViewTextBoxColumn.HeaderText = "FechaConsumo"
-        Me.FechaConsumoDataGridViewTextBoxColumn.Name = "FechaConsumoDataGridViewTextBoxColumn"
-        '
         'pantPpal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(634, 450)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(609, 450)
+        Me.Controls.Add(Me.btDelElaboracion)
+        Me.Controls.Add(Me.btImprimir)
+        Me.Controls.Add(Me.btAddElaboracion)
+        Me.Controls.Add(Me.btSubir)
         Me.Controls.Add(Me.btBajar)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "pantPpal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Elaboraciones"
@@ -291,14 +321,13 @@ Partial Class pantPpal
     Friend WithEvents NuevaElaboraciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NuevaElaboraciónToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NuevoProductoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btBajar As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btSubir As Button
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btAddElaboracion As Button
+    Friend WithEvents btImprimir As Button
     Friend WithEvents EtiquetasDataSetBindingSource As BindingSource
     Friend WithEvents EtiquetasDataSet As EtiquetasDataSet
     Friend WithEvents ListadoElaboracionesBindingSource As BindingSource
@@ -308,6 +337,7 @@ Partial Class pantPpal
     Friend WithEvents ListadoElaboracionesBindingSource1 As BindingSource
     Friend WithEvents ListadoElaboracionesTableAdapter1 As EtiquetasDataSet2TableAdapters.ListadoElaboracionesTableAdapter
     Friend WithEvents ListadoElaboracionesBindingSource2 As BindingSource
+    Friend WithEvents btDelElaboracion As Button
     Friend WithEvents Elaboracion As DataGridViewTextBoxColumn
     Friend WithEvents Producto As DataGridViewTextBoxColumn
     Friend WithEvents FechaElaborado As DataGridViewTextBoxColumn
